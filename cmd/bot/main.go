@@ -38,4 +38,4 @@ func main() {
 	}
 }
 
-// negr
+// negr pidoras
