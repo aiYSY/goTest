@@ -1,3 +1,3 @@
 .PHONY: run
 run:
-	go run cmd/cmd/main.go
+	go run cmd/bot/main.go

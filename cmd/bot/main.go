@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("MyAwesomeBotToken")
+	bot, err := tgbotapi.NewBotAPI("8150479370:AAHu0PJPfsp2jsrjVqEE7Sf-va-FnAhn_WM")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -16,10 +16,15 @@ func main() {
 
 	log.Printf("Authorized on account %s", bot.Self.UserName)
 
-	u := tgbotapi.NewUpdate(0)
-	u.Timeout = 60
+	u := tgbotapi.UpdateConfig{
+		Timeout: 60,
+		Offset:  5,
+	}
 
 	updates := bot.GetUpdatesChan(u)
+	if err != nil {
+		log.Panic()
+	}
 
 	for update := range updates {
 		if update.Message != nil { // If we got a message
